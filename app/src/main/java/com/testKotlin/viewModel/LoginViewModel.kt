@@ -2,11 +2,11 @@ package com.testKotlin.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.testKotlin.MainActivity
+import com.testKotlin.view.LoginActivity
 import com.testKotlin.repository.LoginRepository
 
 open class LoginViewModel : ViewModel() {
-    private var activity: MainActivity? = null
+    private var activity: LoginActivity? = null
 
     private var loginRepository: LoginRepository
 
@@ -14,8 +14,8 @@ open class LoginViewModel : ViewModel() {
         loginRepository = LoginRepository()
     }
 
-    fun loginValidate(activity: MainActivity, email: String, password: String): LiveData<String> {
-        this.activity = activity;
+    fun loginValidate(activity: LoginActivity, email: String, password: String): LiveData<String> {
+        this.activity = activity
         return loginRepository.validateCredentials(this.activity!!,email, password)
     }
 }

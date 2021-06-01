@@ -2,8 +2,8 @@ package com.testKotlin.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.dataClass.LoginResponse
-import com.testKotlin.MainActivity
+import com.testKotlin.model.LoginResponse
+import com.testKotlin.view.LoginActivity
 import com.testKotlin.retrofit.RetrofitClient
 import com.utils.CustomProgressDialog
 import com.utils.Prefs
@@ -15,11 +15,11 @@ import java.util.regex.Pattern
 class LoginRepository() {
     val loginErrorMessage = MutableLiveData<String>()
     private var customProgressDialog: CustomProgressDialog? = null
-    private var activity: MainActivity? = null
+    private var activity: LoginActivity? = null
 
 
     fun validateCredentials(
-        activity: MainActivity,
+        activity: LoginActivity,
         emailID: String,
         password: String
     ): LiveData<String> {

@@ -1,6 +1,6 @@
 package com.testKotlin.retrofit
 
-import com.dataClass.LoginResponse
+import com.testKotlin.model.LoginResponse
 import io.reactivex.Observable
 import retrofit2.http.*
 

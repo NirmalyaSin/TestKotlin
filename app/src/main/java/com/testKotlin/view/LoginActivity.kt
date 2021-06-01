@@ -1,19 +1,20 @@
-package com.testKotlin
+package com.testKotlin.view
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import com.testKotlin.BaseActivity
+import com.testKotlin.R
 import com.testKotlin.databinding.ActivityMainBinding
 import com.testKotlin.viewModel.LoginViewModel
 
-class MainActivity : BaseActivity() {
+class LoginActivity : BaseActivity() {
 
     var binding: ActivityMainBinding? = null
    lateinit var loginViewModel: LoginViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
         showTopbar(this, "Login", false)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
